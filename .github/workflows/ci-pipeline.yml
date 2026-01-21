@@ -22,5 +22,6 @@ jobs:
 
       # Run a simple CI command
       - name: Print branch info
-        run: echo "CI is running on branch: ${{ github.ref }}"
+        run: |
+                echo "CI is running on branch: ${{ github.ref }}"
 
