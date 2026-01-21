@@ -15,9 +15,7 @@ jobs:
   print_inputs:
     runs-on: ubuntu-latest
     steps:
-      - name: Print environment input
-        run: echo "Environment: ${{ github.event.inputs.environment }}"
-
-      - name: Print version input
-        run: echo "Version: ${{ github.event.inputs.version }}"
-
+      - name: Print inputs
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Version: ${{ github.event.inputs.version }}"
