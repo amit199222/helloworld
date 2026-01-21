@@ -1,0 +1,24 @@
+name: Manual Workflow
+
+# Trigger manually
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: false
+        default: 'dev'
+      version:
+        description: 'Version to deploy'
+        required: true
+
+jobs:
+  print_inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print environment input
+        run: echo "Environment: ${{ github.event.inputs.environment }}"
+
+      - name: Print version input
+        run: echo "Version: ${{ github.event.inputs.version }}"
+
